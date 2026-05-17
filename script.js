@@ -17,8 +17,8 @@ const daftarKoleksi = [
     },
     {
         tipe: 'video', // TANDA INI ADALAH VIDEO
-        url: 'https://files.catbox.moe/xyz789.mp4', // GANTI LINK VIDEO (.mp4) DARI CATBOX
-        keterangan: 'Video Kegiatan Perpisahan Kelas'
+        url: 'https://files.catbox.moe/cv91dk.mp4', // GANTI LINK VIDEO (.mp4) DARI CATBOX
+        keterangan: 'Video Merayakan Ulang Tahun Miss Dewi'
     },
     {
         tipe: 'video',
