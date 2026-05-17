@@ -22,8 +22,8 @@ const daftarKoleksi = [
     },
     {
         tipe: 'video',
-        url: 'https://files.catbox.moe/qwe456.mp4', // GANTI LINK VIDEO DARI CATBOX
-        keterangan: 'Video Dokumentasi Pentas Seni'
+        url: 'https://files.catbox.moe/iz59ih.mp4', // GANTI LINK VIDEO DARI CATBOX
+        keterangan: 'Video Gabut Saat Di Kelas'
     },
     {
         tipe: 'foto',
