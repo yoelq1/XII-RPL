@@ -13,10 +13,12 @@ html {
 body {
     font-family: 'Poppins', sans-serif;
     line-height: 1.6;
-    color: #2d3436;
-    background-color: #f8f9fc;
-    background-image: linear-gradient(135deg, #f8f9fc 0%, #e0e7ff 100%);
+    color: #e2e8f0; /* Warna teks terang di latar gelap */
+    /* Latar belakang: Gelap tapi tidak pekat, ada gradasi abu-abu kebiruan terang dikit */
+    background-color: #1a1c23;
+    background-image: linear-gradient(135deg, #1a1c23 0%, #232732 50%, #2a2f3d 100%);
     background-attachment: fixed;
+    min-height: 100vh;
 }
 
 .container {
@@ -25,18 +27,19 @@ body {
     margin: 0 auto;
 }
 
-/* === HEADER DENGAN EFEK GRADASI & ANIMASI === */
+/* === HEADER DENGAN EFEK GRADASI GELAP BERCAHAYA === */
 .header {
-    background: linear-gradient(135deg, #165DFF 0%, #6B72FF 50%, #00C6FF 100%);
-    color: white;
+    background: linear-gradient(135deg, #252a3c 0%, #303952 50%, #3a4460 100%);
+    color: #ffffff;
     padding: 4rem 0;
     text-align: center;
     position: relative;
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(22, 93, 255, 0.2);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-/* Efek cahaya bergerak di latar header */
+/* Efek cahaya bergerak warna ungu/biru samar */
 .header::before {
     content: '';
     position: absolute;
@@ -44,14 +47,15 @@ body {
     left: -50%;
     width: 200%;
     height: 200%;
-    background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 60%);
-    animation: cahayaBergerak 8s linear infinite;
+    background: radial-gradient(circle, rgba(120, 140, 255, 0.12) 0%, transparent 60%);
+    animation: cahayaBergerak 10s linear infinite;
     z-index: 1;
 }
 
 @keyframes cahayaBergerak {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    0% { transform: rotate(0deg) scale(1); opacity: 0.7; }
+    50% { transform: rotate(180deg) scale(1.2); opacity: 0.4; }
+    100% { transform: rotate(360deg) scale(1); opacity: 0.7; }
 }
 
 .header .container {
@@ -62,21 +66,23 @@ body {
 .header h1 {
     font-size: 2.3rem;
     margin-bottom: 0.8rem;
-    letter-spacing: 1px;
-    text-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    letter-spacing: 1.2px;
+    text-shadow: 0 0 20px rgba(120, 140, 255, 0.4), 0 2px 10px rgba(0,0,0,0.3);
     animation: munculAtas 1s ease-out;
+    color: #e0e7ff;
 }
 
 .header p {
     font-size: 1.2rem;
-    opacity: 0.95;
+    opacity: 0.9;
     font-weight: 300;
     animation: munculBawah 1.2s ease-out;
+    color: #cbd5e1;
 }
 
 @keyframes munculAtas {
-    from { opacity: 0; transform: translateY(-30px); }
-    to { opacity: 1; transform: translateY(0); }
+    from { opacity: 0; transform: translateY(-30px) scale(0.95); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
 }
 
 @keyframes munculBawah {
@@ -84,15 +90,16 @@ body {
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* === NAVIGASI STIKY DENGAN EFEK KACA === */
+/* === NAVIGASI STIKY - EFEK KACA GELAP === */
 .navbar {
-    background: rgba(22, 93, 255, 0.85);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    background: rgba(30, 34, 46, 0.75);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     transition: all 0.3s ease;
 }
 
@@ -106,14 +113,15 @@ body {
 .navbar a {
     display: block;
     padding: 1.1rem 1.6rem;
-    color: white;
+    color: #cbd5e1;
     text-decoration: none;
     font-weight: 500;
     position: relative;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    letter-spacing: 0.5px;
 }
 
-/* Garis bawah animasi saat hover */
+/* Garis bawah animasi warna ungu kebiruan */
 .navbar a::after {
     content: '';
     position: absolute;
@@ -121,14 +129,16 @@ body {
     height: 3px;
     bottom: 0;
     left: 50%;
-    background-color: #ffffff;
+    background: linear-gradient(90deg, #818cf8, #a5b4fc);
     transition: all 0.3s ease;
     transform: translateX(-50%);
     border-radius: 3px 3px 0 0;
+    box-shadow: 0 0 8px rgba(129, 140, 248, 0.5);
 }
 
 .navbar a:hover {
-    background: rgba(255, 255, 255, 0.15);
+    color: #ffffff;
+    background: rgba(129, 140, 248, 0.1);
     transform: translateY(-2px);
 }
 
@@ -156,33 +166,37 @@ body {
 .section h2 {
     text-align: center;
     font-size: 2rem;
-    color: #165DFF;
+    color: #a5b4fc;
     margin-bottom: 3rem;
     position: relative;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    letter-spacing: 1px;
+    text-shadow: 0 0 10px rgba(129, 140, 248, 0.3);
 }
 
 .section h2::after {
     content: '';
     width: 70px;
     height: 4px;
-    background: linear-gradient(90deg, #165DFF, #00C6FF);
+    background: linear-gradient(90deg, #818cf8, #38bdf8);
     position: absolute;
     bottom: -10px;
     left: 50%;
     transform: translateX(-50%);
     border-radius: 10px;
+    box-shadow: 0 0 12px rgba(56, 189, 248, 0.4);
 }
 
 /* Bagian Beranda */
 .beranda {
-    background: #ffffff;
+    background: rgba(45, 52, 71, 0.5);
     margin: 2rem auto;
-    border-radius: 16px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255,255,255,0.05);
     max-width: 1000px;
     padding: 3rem 2rem !important;
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    backdrop-filter: blur(8px);
 }
 
 .beranda p {
@@ -190,39 +204,41 @@ body {
     font-size: 1.15rem;
     max-width: 800px;
     margin: 0 auto;
-    color: #4a5568;
+    color: #cbd5e1;
 }
 
-/* === GALERI FOTO & VIDEO - UKURAN OTOMATIS MENYESUAIKAN === */
+/* === GALERI FOTO & VIDEO - UKURAN OTOMATIS & EFEK KEREN === */
 .galeri-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 2rem;
     padding: 1rem 0;
-    /* Sistem susunan agar mengikuti tinggi gambar masing-masing */
     grid-auto-rows: auto;
-    align-items: start; /* Penting: Agar tidak ditarik sama tinggi */
+    align-items: start;
 }
 
 .foto-item {
-    background: white;
-    border-radius: 16px;
+    background: rgba(45, 52, 71, 0.6);
+    border-radius: 20px;
     overflow: hidden;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.07);
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255,255,255,0.08);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     cursor: pointer;
     position: relative;
     width: 100%;
-    height: auto; /* Tinggi otomatis */
+    height: auto;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(4px);
 }
 
-/* Efek bayangan dan naik saat diarahkan */
+/* Efek naik, membesar, dan bercahaya saat diarahkan */
 .foto-item:hover {
-    transform: translateY(-12px) scale(1.02);
-    box-shadow: 0 15px 30px rgba(22, 93, 255, 0.15);
+    transform: translateY(-15px) scale(1.03);
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.5), 0 0 20px rgba(129, 140, 248, 0.2);
+    border-color: rgba(129, 140, 248, 0.2);
 }
 
-/* Efek gelap samar saat hover */
+/* Efek lapisan cahaya gradasi ungu/biru */
 .foto-item::before {
     content: '';
     position: absolute;
@@ -230,9 +246,9 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to top, rgba(22, 93, 255, 0.4), transparent 50%);
+    background: linear-gradient(to top, rgba(129, 140, 248, 0.3), transparent 60%);
     opacity: 0;
-    transition: opacity 0.4s ease;
+    transition: opacity 0.5s ease;
     z-index: 2;
     pointer-events: none;
 }
@@ -241,61 +257,73 @@ body {
     opacity: 1;
 }
 
-/* GAYA KHUSUS GAMBAR - TINGGI OTOMATIS */
+/* GAMBAR - TAMPILAN GELAP */
 .foto-item img {
     width: 100%;
-    height: auto !important; /* Tinggi mengikuti asli foto */
-    object-fit: contain; /* Menampilkan seluruh foto tanpa terpotong */
-    background-color: #f0f0f0; /* Warna latar jika rasio beda */
-    transition: transform 0.6s ease;
+    height: auto !important;
+    object-fit: contain;
+    background-color: #1a1c23;
+    transition: transform 0.7s ease, filter 0.5s ease;
     display: block;
+    filter: brightness(0.9) contrast(1.1); /* Sedikit kontras biar bagus di mode gelap */
 }
 
-/* Gambar membesar sedikit saat hover */
+/* Gambar membesar dan terang saat hover */
 .foto-item:hover img {
-    transform: scale(1.05);
+    transform: scale(1.08);
+    filter: brightness(1.05) contrast(1.15);
 }
 
-/* GAYA KHUSUS VIDEO */
+/* VIDEO - DIOPTIMALKAN AGAR LANCAR TANPA NGELAG */
 .foto-item video {
     width: 100%;
     height: auto;
-    max-height: 400px; /* Batas maksimal agar video tidak terlalu panjang */
+    max-height: 380px;
     object-fit: contain;
-    transition: transform 0.6s ease;
+    background: #000000;
+    transition: transform 0.7s ease;
     display: block;
-    background: #000; /* Latar belakang hitam biar rapi */
+    
+    /* ⚙️ PENGATURAN WAJIB AGAR LANCAR */
+    preload: "none";       /* Video TIDAK dimuat duluan, baru jalan pas diklik play */
+    loading: "lazy";       /* Cuma dimuat kalau masuk layar pandang */
+    controlsList: "nodownload";
+    playsinline: "";        /* Membantu pemutaran lebih ringan di HP */
 }
 
-/* Video juga membesar saat hover */
 .foto-item:hover video {
-    transform: scale(1.03);
+    transform: scale(1.05);
 }
 
-/* Keterangan di bawah foto/video */
+/* KETERANGAN FOTO/VIDEO */
 .foto-item p {
-    padding: 1rem;
+    padding: 1.1rem;
     text-align: center;
     font-weight: 600;
-    color: #2d3436;
-    background: white;
+    color: #e2e8f0;
+    background: rgba(30, 34, 46, 0.8);
     position: relative;
     z-index: 3;
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
+    border-top: 1px solid rgba(255,255,255,0.05);
 }
 
 .foto-item:hover p {
-    color: #165DFF;
+    color: #a5b4fc;
+    background: rgba(30, 34, 46, 0.95);
+    text-shadow: 0 0 8px rgba(129, 140, 248, 0.4);
 }
 
 /* === BAGIAN TENTANG & PESAN === */
 .tentang, .pesan {
-    background: white;
+    background: rgba(45, 52, 71, 0.5);
     margin: 2rem auto;
-    border-radius: 16px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255,255,255,0.05);
     max-width: 1000px;
     padding: 3rem 2rem !important;
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    backdrop-filter: blur(8px);
 }
 
 .tentang p {
@@ -303,51 +331,89 @@ body {
     font-size: 1.1rem;
     max-width: 800px;
     margin: 0 auto;
-    color: #4a5568;
+    color: #cbd5e1;
 }
 
 .pesan-box {
-    background: linear-gradient(135deg, #f0f4ff 0%, #e6f0ff 100%);
+    background: linear-gradient(135deg, rgba(60, 70, 110, 0.4) 0%, rgba(80, 90, 140, 0.2) 100%);
     padding: 2.5rem;
-    border-radius: 12px;
-    box-shadow: inset 0 2px 10px rgba(0,0,0,0.05);
-    border-left: 5px solid #165DFF;
-    transition: transform 0.3s ease;
+    border-radius: 16px;
+    box-shadow: inset 0 2px 15px rgba(0,0,0,0.2);
+    border-left: 4px solid #818cf8;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(129, 140, 248, 0.1);
 }
 
 .pesan-box:hover {
-    transform: scale(1.01);
+    transform: scale(1.015);
+    box-shadow: inset 0 2px 15px rgba(0,0,0,0.2), 0 0 15px rgba(129, 140, 248, 0.1);
 }
 
 .pesan-box p {
     margin-bottom: 1rem;
     font-size: 1.08rem;
-    color: #2d3436;
+    color: #e2e8f0;
 }
 
 .pesan-box strong {
-    color: #165DFF;
+    color: #a5b4fc;
+    text-shadow: 0 0 5px rgba(129, 140, 248, 0.3);
 }
 
-/* === FOOTER DENGAN GRADASI === */
+/* === FOOTER === */
 .footer {
-    background: linear-gradient(135deg, #165DFF 0%, #6B72FF 100%);
-    color: white;
-    text-align: center;
+    background: linear-gradient(135deg, #252a3c 0%, #303952 100%);
+    color: #cbd5e1;
+        text-align: center;
     padding: 2rem 0;
     margin-top: 3rem;
-    box-shadow: 0 -5px 20px rgba(22, 93, 255, 0.15);
+    box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.4);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .footer p {
     font-weight: 300;
     letter-spacing: 0.5px;
+    color: #94a3b8;
 }
 
-/* === RESPONSIF UNTUK HP & TABLET === */
+/* === RESPONSIF KHUSUS HP & TABLET === */
 @media (max-width: 768px) {
     .header h1 {
         font-size: 1.7rem;
     }
 
     .header p {
+        font-size: 1rem;
+    }
+
+    .navbar a {
+        padding: 0.9rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    .section h2 {
+        font-size: 1.5rem;
+    }
+
+    .galeri-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1.2rem;
+    }
+
+    .foto-item {
+        border-radius: 16px;
+    }
+
+    .beranda, .tentang, .pesan {
+        margin: 1rem;
+        padding: 2rem 1.2rem !important;
+        border-radius: 16px;
+    }
+
+    .pesan-box {
+        padding: 1.5rem;
+    }
+        }
+    
+          
