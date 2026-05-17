@@ -37,8 +37,8 @@ const daftarKoleksi = [
     },
     {
         tipe: 'foto',
-        url: 'https://files.catbox.moe/oudmy5.jpg', // GANTI LINK FOTO DARI CATBOX
-        keterangan: 'Foto Saat Pulang Sekolah Di Lab Rpl'
+        url: 'https://files.catbox.moe/3ee8ij.webp', // GANTI LINK FOTO DARI CATBOX
+        keterangan: 'Foto Saat Gabut Nunggu Bel Pulang'
     },
     {
         tipe: 'foto',
