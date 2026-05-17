@@ -12,8 +12,8 @@ const daftarKoleksi = [
     },
     {
         tipe: 'foto',
-        url: 'https://files.catbox.moe/def456.jpg', // GANTI LINK FOTO DARI CATBOX
-        keterangan: 'Momen Praktik Pemrograman Web'
+        url: 'https://files.catbox.moe/4b1rfr.jpg', // GANTI LINK FOTO DARI CATBOX
+        keterangan: 'Berkunjung Kerumah Miss Dewi Tercinta'
     },
     {
         tipe: 'video', // TANDA INI ADALAH VIDEO
