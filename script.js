@@ -42,8 +42,8 @@ const daftarKoleksi = [
     },
     {
         tipe: 'foto',
-        url: 'https://files.catbox.moe/oudmy5.jpg', // GANTI LINK FOTO DARI CATBOX
-        keterangan: 'Foto Saat Pulang Sekolah Di Lab Rpl'
+        url: 'https://files.catbox.moe/c2kqkq.webp', // GANTI LINK FOTO DARI CATBOX
+        keterangan: 'Foto Bareng Pas Farhan Tidur'
     }
     // Tambahkan baris di atas kalau mau nambah foto/video lagi
 ];
