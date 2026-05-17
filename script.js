@@ -8,7 +8,7 @@ const daftarKoleksi = [
     {
         tipe: 'foto',
         url: 'https://files.catbox.moe/ajvxsp.jpg', // GANTI LINK FOTO DARI CATBOX
-        keterangan: 'Foto Bersama Seluruh Kelas XII RPL Saat Kunjungan Industri'
+        keterangan: 'Foto Bersama Seluruh Kelas XII RPL/DKV Saat Kunjungan Industri'
     },
     {
         tipe: 'foto',
