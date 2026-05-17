@@ -27,8 +27,8 @@ const daftarKoleksi = [
     },
     {
         tipe: 'foto',
-        url: 'https://files.catbox.moe/lkj012.jpg', // GANTI LINK FOTO DARI CATBOX
-        keterangan: 'Kenangan Berbagi Makan Siang'
+        url: 'https://files.catbox.moe/iz59ih.mp4', // GANTI LINK FOTO DARI CATBOX
+        keterangan: 'Kenangan Saat Gabut Istirahat Di Kelas'
     }
     // Tambahkan baris di atas kalau mau nambah foto/video lagi
 ];
