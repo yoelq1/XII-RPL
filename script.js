@@ -34,6 +34,16 @@ const daftarKoleksi = [
         tipe: 'video',
         url: 'https://files.catbox.moe/rjnj7n.mp4', // GANTI LINK FOTO DARI CATBOX
         keterangan: 'Foto Barang Teman Kelas'
+    },
+    {
+        tipe: 'foto',
+        url: 'https://files.catbox.moe/oudmy5.jpg', // GANTI LINK FOTO DARI CATBOX
+        keterangan: 'Foto Saat Pulang Sekolah Di Lab Rpl'
+    },
+    {
+        tipe: 'foto',
+        url: 'https://files.catbox.moe/oudmy5.jpg', // GANTI LINK FOTO DARI CATBOX
+        keterangan: 'Foto Saat Pulang Sekolah Di Lab Rpl'
     }
     // Tambahkan baris di atas kalau mau nambah foto/video lagi
 ];
