@@ -8,22 +8,28 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Efek Latar Belakang Bergerak -->
+    <div class="latar-efek"></div>
+
     <!-- Header -->
     <header class="header">
         <div class="container">
-            <h1>✨ Kenang-Kenangan Kelas XII RPL/DKV ✨</h1>
-            <p>SMKS ALBAHRI | Angkatan 2025 - 2026</p>
+            <div class="header-kotak">
+                <h1 class="animasi-muncul">✨ Kenang-Kenangan Kelas XII RPL/DKV ✨</h1>
+                <p class="animasi-muncul-tunda">SMKS ALBAHRI | Angkatan 2025 - 2026</p>
+            </div>
         </div>
+        <div class="gelombang-bawah"></div>
     </header>
 
     <!-- Navigasi -->
     <nav class="navbar">
         <div class="container">
             <ul>
-                <li><a href="#beranda">Beranda</a></li>
-                <li><a href="#galeri">Galeri (Foto & Video)</a></li>
-                <li><a href="#tentang">Tentang Kami</a></li>
-                <li><a href="#pesan">Pesan & Kesan</a></li>
+                <li><a href="#beranda" class="nav-link">🏠 Beranda</a></li>
+                <li><a href="#galeri" class="nav-link">📸 Galeri</a></li>
+                <li><a href="#tentang" class="nav-link">👥 Tentang Kami</a></li>
+                <li><a href="#pesan" class="nav-link">💌 Pesan & Kesan</a></li>
             </ul>
         </div>
     </nav>
@@ -31,15 +37,19 @@
     <!-- Bagian Beranda -->
     <section id="beranda" class="section beranda">
         <div class="container">
-            <h2>Selamat Datang di Website XII RPL/DKV</h2>
-            <p>Tempat menyimpan jejak langkah, tawa, dan cerita indah bersama teman-teman kelas XII RPL/DKV SMKS ALBAHRI. Semua momen berharga, baik foto maupun video kenangan, kami abadikan di sini.</p>
+            <div class="konten-kotak efek-cahaya">
+                <h2 class="judul-bagian">Selamat Datang di Website XII RPL/DKV</h2>
+                <p class="teks-utama">Tempat menyimpan jejak langkah, tawa, dan cerita indah bersama teman-teman kelas XII RPL/DKV SMKS ALBAHRI. Semua momen berharga, baik foto maupun video kenangan, kami abadikan di sini sebagai warisan kenangan tak terlupakan.</p>
+                <div class="garis-pemisah"></div>
+                <p class="teks-bawah">✨ Selamat bernostalgia! ✨</p>
+            </div>
         </div>
     </section>
 
     <!-- Bagian Galeri Foto & Video -->
     <section id="galeri" class="section galeri">
         <div class="container">
-            <h2>📸 Galeri Foto & Video Kenangan</h2>
+            <h2 class="judul-bagian">📸 Galeri Foto & Video Kenangan</h2>
             <div class="galeri-grid" id="galeriContainer">
                 <!-- Foto & Video akan dimuat lewat JavaScript -->
             </div>
@@ -49,26 +59,38 @@
     <!-- Bagian Tentang Kami -->
     <section id="tentang" class="section tentang">
         <div class="container">
-            <h2>👥 Tentang Kelas XII RPL/DLV</h2>
-            <p>Kelas XII RPL/DKV SMKS ALBAHRI adalah kelas yang kompak, ceria, dan penuh kenangan manis selama masa sekolah.</p>
+            <div class="konten-kotak efek-putar">
+                <h2 class="judul-bagian">👥 Tentang Kelas XII RPL/DKV</h2>
+                <div class="tentang-konten">
+                    <div class="ikon-kelas">🏫</div>
+                    <p>Kelas XII RPL/DKV SMKS ALBAHRI adalah kelas yang kompak, ceria, dan penuh kenangan manis selama masa sekolah. Kami adalah kumpulan siswa yang kreatif, penuh semangat, dan selalu saling mendukung dalam segala hal. Di sini, kami belajar, berkarya, dan tumbuh bersama menjadi pribadi yang lebih baik.</p>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Bagian Pesan & Kesan -->
     <section id="pesan" class="section pesan">
         <div class="container">
-            <h2>💌 Pesan & Kesan</h2>
-            <div class="pesan-box">
-                <p><strong>Kesan:</strong> "Sekolah bersama kalian adalah pengalaman terbaik. Setiap hari penuh canda dan kerja sama yang luar biasa."</p>
-                <p><strong>Pesan:</strong> "Semoga teman-teman semua sukses di jalan masing-masing, terus berkarya, dan jangan pernah lupakan kenangan kita di SMKS ALBAHRI."</p>
+            <h2 class="judul-bagian">💌 Pesan & Kesan</h2>
+            <div class="pesan-box efek-naik">
+                <div class="pesan-item">
+                    <h3>✨ Kesan</h3>
+                    <p>"Sekolah bersama kalian adalah pengalaman terbaik. Setiap hari penuh canda, tawa, dan kerja sama yang luar biasa. Tidak ada hari yang membosankan selama kita bersama."</p>
+                </div>
+                <div class="pesan-item">
+                    <h3>📩 Pesan</h3>
+                    <p>"Semoga teman-teman semua sukses di jalan masing-masing, terus berkarya, dan jangan pernah lupakan kenangan indah kita di SMKS ALBAHRI. Sukses selalu untuk kita semua!"</p>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
+        <div class="gelombang-atas"></div>
         <div class="container">
-            <p>&copy; 2026 SMKS ALBAHRI - Kelas XII RPL/DKV | Dibuat dengan ❤️ oleh Siswa RPL/DKV</p>
+            <p>&copy; 2026 SMKS ALBAHRI - Kelas XII RPL/DKV | Dibuat dengan ❤️ penuh kenangan</p>
         </div>
     </footer>
 
