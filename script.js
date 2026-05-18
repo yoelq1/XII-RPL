@@ -5,83 +5,99 @@
 // - Semua link ambil dari Catbox.moe ya!
 
 const daftarKoleksi = [
-    {
-        tipe: 'foto',
-        url: 'https://files.catbox.moe/ajvxsp.jpg', // GANTI LINK FOTO DARI CATBOX
-        keterangan: 'Foto Bersama Seluruh Kelas XII RPL/DKV Saat Kunjungan Industri'
-    },
-    {
-        tipe: 'foto',
-        url: 'https://files.catbox.moe/4b1rfr.jpg', // GANTI LINK FOTO DARI CATBOX
-        keterangan: 'Berkunjung Kerumah Miss Dewi Tercinta'
-    },
-    {
-        tipe: 'video', // TANDA INI ADALAH VIDEO
-        url: 'https://files.catbox.moe/cv91dk.mp4', // GANTI LINK VIDEO (.mp4) DARI CATBOX
-        keterangan: 'Video Merayakan Ulang Tahun Miss Dewi'
-    },
-    {
-        tipe: 'video',
-        url: 'https://files.catbox.moe/iz59ih.mp4', // GANTI LINK VIDEO DARI CATBOX
-        keterangan: 'Video Gabut Saat Di Kelas'
-    },
-    {
-        tipe: 'foto',
-        url: 'https://files.catbox.moe/oudmy5.jpg', // GANTI LINK FOTO DARI CATBOX
-        keterangan: 'Foto Saat Pulang Sekolah Di Lab Rpl'
-    },
-    {
-        tipe: 'video',
-        url: 'https://files.catbox.moe/rjnj7n.mp4', // GANTI LINK FOTO DARI CATBOX
-        keterangan: 'Foto Barang Teman Kelas'
-    },
-    {
-        tipe: 'foto',
-        url: 'https://files.catbox.moe/3ee8ij.webp', // GANTI LINK FOTO DARI CATBOX
-        keterangan: 'Foto Saat Gabut Nunggu Bel Pulang'
-    },
-    {
-        tipe: 'foto',
-        url: 'https://files.catbox.moe/c2kqkq.webp', // GANTI LINK FOTO DARI CATBOX
-        keterangan: 'Foto Bareng Pas Farhan Tidur'
-    }
-    // Tambahkan baris di atas kalau mau nambah foto/video lagi
+{
+tipe: 'foto',
+url: 'https://files.catbox.moe/ajvxsp.jpg', // GANTI LINK FOTO DARI CATBOX
+keterangan: 'Foto Bersama Seluruh Kelas XII RPL/DKV Saat Kunjungan Industri'
+},
+{
+tipe: 'foto',
+url: 'https://files.catbox.moe/4b1rfr.jpg', // GANTI LINK FOTO DARI CATBOX
+keterangan: 'Berkunjung Kerumah Miss Dewi Tercinta'
+},
+{
+tipe: 'video', // TANDA INI ADALAH VIDEO
+url: 'https://files.catbox.moe/cv91dk.mp4', // GANTI LINK VIDEO (.mp4) DARI CATBOX
+keterangan: 'Video Merayakan Ulang Tahun Miss Dewi'
+},
+{
+tipe: 'video',
+url: 'https://files.catbox.moe/iz59ih.mp4', // GANTI LINK VIDEO DARI CATBOX
+keterangan: 'Video Gabut Saat Di Kelas'
+},
+{
+tipe: 'foto',
+url: 'https://files.catbox.moe/oudmy5.jpg', // GANTI LINK FOTO DARI CATBOX
+keterangan: 'Foto Saat Pulang Sekolah Di Lab Rpl'
+},
+{
+tipe: 'video',
+url: 'https://files.catbox.moe/rjnj7n.mp4', // GANTI LINK FOTO DARI CATBOX
+keterangan: 'Foto Barang Teman Kelas'
+},
+{
+tipe: 'foto',
+url: 'https://files.catbox.moe/3ee8ij.webp', // GANTI LINK FOTO DARI CATBOX
+keterangan: 'Foto Saat Gabut Nunggu Bel Pulang'
+},
+{
+tipe: 'foto',
+url: 'https://files.catbox.moe/c2kqkq.webp', // GANTI LINK FOTO DARI CATBOX
+keterangan: 'Foto Bareng Pas Farhan Tidur'
+}
+// Tambahkan baris di atas kalau mau nambah foto/video lagi
 ];
 
 // PROSES MENAMPILKAN KE HALAMAN
 const galeriContainer = document.getElementById('galeriContainer');
 
-daftarKoleksi.forEach(item => {
-    const itemElement = document.createElement('div');
-    itemElement.className = 'foto-item';
+daftarKoleksi.forEach((item, index) => {
+const itemElement = document.createElement('div');
+itemElement.className = 'foto-item';
 
-    // Mengecek apakah isinya Video atau Foto
-    if (item.tipe === 'video') {
-        // TAMPILAN UNTUK VIDEO
-        itemElement.innerHTML = `
-            <video controls preload="metadata" poster="https://files.catbox.moe/abc123.jpg">
-                <source src="${item.url}" type="video/mp4">
-                Browser kamu tidak mendukung pemutaran video.
-            </video>
-            <p>🎥 ${item.keterangan}</p>
-        `;
-        // *Keterangan: Bagian "poster" bisa diisi link foto biasa sebagai sampul video sebelum diputar
-    } else {
-        // TAMPILAN UNTUK FOTO
-        itemElement.innerHTML = `
-            <img src="${item.url}" alt="${item.keterangan}">
-            <p>📸 ${item.keterangan}</p>
-        `;
-    }
+// Tambahkan animasi bertahap saat dimuat
+itemElement.style.animation = `munculItem 0.6s ease-out ${index * 0.15}s forwards`;
+itemElement.style.opacity = '0';
+itemElement.style.transform = 'translateY(20px)';
 
-    galeriContainer.appendChild(itemElement);
+// Mengecek apakah isinya Video atau Foto
+if (item.tipe === 'video') {
+// TAMPILAN UNTUK VIDEO
+itemElement.innerHTML = `
+<video controls preload="metadata" poster="https://files.catbox.moe/abc123.jpg">
+<source src="${item.url}" type="video/mp4">
+Browser kamu tidak mendukung pemutaran video.
+</video>
+<p>🎥 ${item.keterangan}</p>
+`;
+// *Keterangan: Bagian "poster" bisa diisi link foto biasa sebagai sampul video sebelum diputar
+} else {
+// TAMPILAN UNTUK FOTO
+itemElement.innerHTML = `
+<img src="${item.url}" alt="${item.keterangan}">
+<p>📸 ${item.keterangan}</p>
+`;
+}
+
+galeriContainer.appendChild(itemElement);
 });
+
+// Tambahkan animasi keyframe baru di JS atau CSS
+const style = document.createElement('style');
+style.innerHTML = `
+@keyframes munculItem {
+    to {
+        opacity: 1;
+        transform: translateY(0) rotate(0);
+    }
+}`;
+document.head.appendChild(style);
 
 // EFEK GULIR HALUS KETIKA KLIK MENU NAVIGASI
 document.querySelectorAll('.navbar a').forEach(link => {
-    link.addEventListener('click', function(e) {
-        e.preventDefault();
-        const tujuan = document.querySelector(this.getAttribute('href'));
-        tujuan.scrollIntoView({ behavior: 'smooth' });
-    });
+link.addEventListener('click', function(e) {
+e.preventDefault();
+const tujuan = document.querySelector(this.getAttribute('href'));
+tujuan.scrollIntoView({ behavior: 'smooth' });
+});
 });
