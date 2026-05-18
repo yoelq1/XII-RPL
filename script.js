@@ -44,6 +44,16 @@ keterangan: 'Foto Saat Gabut Nunggu Bel Pulang'
 tipe: 'foto',
 url: 'https://files.catbox.moe/c2kqkq.webp', // GANTI LINK FOTO DARI CATBOX
 keterangan: 'Foto Bareng Pas Farhan Tidur'
+},
+{
+tipe: 'foto',
+url: 'https://files.catbox.moe/n07z58.jpg', // GANTI LINK FOTO DARI CATBOX
+keterangan: 'Foto Saat Ngeliwet Bareng Di Rumah Pak Ndik'
+},
+{
+tipe: 'foto',
+url: 'https://files.catbox.moe/9rcji5.jpg', // GANTI LINK FOTO DARI CATBOX
+keterangan: 'Foto Saat Makan Gacoan Bareng Di Hari Ulang Tahun Miss Dewi '
 }
 // Tambahkan baris di atas kalau mau nambah foto/video lagi
 ];
